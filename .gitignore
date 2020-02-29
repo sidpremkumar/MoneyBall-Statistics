@@ -1,0 +1,4 @@
+*.DS_Store
+*.ipynb_checkpoints*
+nba-historical-stats-and-betting-data/*
+venv*
