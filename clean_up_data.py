@@ -29,8 +29,8 @@ def main(raw_games):
     for team in raw_games['team_id'].unique():
         ret[team] = create_team_table(team)
     # Per Team, make sure their stats are first, and opponent is second
-    away_stats = ['a_fgm', 'a_fga', 'a_fg_pct', 'a_fg3m', 'a_fg3a', 'a_fg3_pct', 'a_ftm', 'a_fta', 'a_ft_pct', 'a_oreb', 'a_dreb', 'a_reb', 'a_ast', 'a_stl', 'a_blk', 'a_tov', 'a_pf', 'a_pts']
-    home_stats = ['fgm', 'fga', 'fg_pct', 'fg3m', 'fg3a', 'fg3_pct', 'ftm', 'fta', 'ft_pct', 'oreb', 'dreb', 'reb', 'ast', 'stl', 'blk', 'tov', 'pf', 'pts']
+    away_stats = ['a_fgm', 'a_fga', 'a_fg_pct', 'a_fg3m', 'a_fg3a', 'a_fg3_pct', 'a_ftm', 'a_fta', 'a_ft_pct', 'a_oreb', 'a_dreb', 'a_reb', 'a_ast', 'a_stl', 'a_blk', 'a_tov', 'a_pf', 'a_pts', 'a_ML']
+    home_stats = ['fgm', 'fga', 'fg_pct', 'fg3m', 'fg3a', 'fg3_pct', 'ftm', 'fta', 'ft_pct', 'oreb', 'dreb', 'reb', 'ast', 'stl', 'blk', 'tov', 'pf', 'pts', 'ML']
     for team, games in ret.items():
         for index, game in games.iterrows():
             dict = game.to_dict()

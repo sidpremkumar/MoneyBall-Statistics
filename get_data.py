@@ -57,15 +57,15 @@ def get_data_for_year(year):
                 data = [[game1.game_id, game1.game_date, game1.matchup, game1.team_id, game1.is_home, game1.wl, game1.w,
                      game1.l, game1.w_pct, game1.loc['min'], game1.fgm, game1.fga, game1.fg_pct, game1.fg3m, game1.fg3a,
                     game1.fg3_pct, game1.ftm, game1.fta, game1.ft_pct, game1.oreb, game1.dreb, game1.reb, game1.ast, game1.stl, game2.blk, game2.tov, game2.pf,
-                    game1.pts, game1_num_game, game2.game_id, game2.fgm, game2.fga, game2.fg_pct, game2.fg3m, game2.fg3a,
+                    game1.pts, game1_num_game, game1.a_team_id, game2.fgm, game2.fga, game2.fg_pct, game2.fg3m, game2.fg3a,
                     game2.fg3_pct, game2.ftm, game2.fta, game2.ft_pct, game2.oreb, game2.dreb, game2.reb , game2.ast, game2.stl, game1.blk, game1.tov, game1.pf,
                     game2.pts, game2_num_game, spread, betting_total, price_line1, price_line2, game1.season_year]]
             else:
-                # Game 2 is the home team
+                # Game 2 is the away team
                 data = [[game2.game_id, game2.game_date, game2.matchup, game2.team_id, game2.is_home, game2.wl, game2.w,
                      game2.l, game2.w_pct, game2.loc['min'], game2.fgm, game2.fga, game2.fg_pct, game2.fg3m, game2.fg3a,
                     game2.fg3_pct, game2.ftm, game2.fta, game2.ft_pct, game2.oreb, game2.dreb, game2.reb, game2.ast, game2.stl, game2.blk, game2.tov, game2.pf,
-                    game2.pts, game2_num_game, game1.game_id, game1.fgm, game1.fga, game1.fg_pct, game1.fg3m, game1.fg3a,
+                    game2.pts, game2_num_game, game2.a_team_id, game1.fgm, game1.fga, game1.fg_pct, game1.fg3m, game1.fg3a,
                     game1.fg3_pct, game1.ftm, game1.fta, game1.ft_pct, game1.oreb, game1.dreb, game1.reb , game1.ast, game1.stl, game1.blk, game1.tov, game1.pf,
                     game1.pts, game1_num_game, spread, betting_total, price_line1, price_line2, game1.season_year]]
             new_row = pd.DataFrame(data ,columns=relevent_columns)
@@ -75,5 +75,3 @@ def get_data_for_year(year):
     print(f"[INFO] Lost {lost_value} values.")
     return formatted_data
 
-if __main__ == "__main__":
-    print(get_data_for_year(2016))
