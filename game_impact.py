@@ -109,7 +109,7 @@ player_dict = players.get_players()
 
 teams = teams.get_teams()
 # EXAMPLE: HOUSTON, 2018
-HOU = [x for x in teams if x['full_name'] == 'Boston Celtics'][0]
+HOU = [x for x in teams if x['full_name'] == 'Houston Rockets'][0]
 HOU_id = HOU['id']
 HOU_18 = teamgamelog.TeamGameLog(team_id=HOU_id, season = '2018', season_type_all_star='Regular Season')
 
